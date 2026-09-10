@@ -1,0 +1,2 @@
+# Write your MySQL query statement below
+select id,count(*) as num From (select requester_id as id from RequestAccepted UNION ALL select accepter_id as id from RequestAccepted) as q group by id order by num desc limit 1; 
